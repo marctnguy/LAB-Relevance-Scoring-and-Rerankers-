@@ -1,0 +1,5 @@
+In this lab I built an advanced RAG retrieval pipeline over a podcast transcript and a legal-style PDF source. I started with a basic embedding-based retriever, then added metadata to each chunk so the corpus could be filtered by source type and document location. After that, I compared two reranking approaches: an LLM-based relevance scorer and a cross-encoder reranker.
+
+The main takeaway was that the rerankers improved ordering within the top retrieved chunks, but they did not magically solve the retrieval problem when the source corpus did not contain a direct answer. For the query about the EU AI Act and high-risk AI systems, the retrievers consistently found chunks about AI ethics, risk, and governance, but not an exact legal passage answering the question. The final RAG pipeline therefore behaved appropriately by hedging when the context was insufficient.
+
+Overall, the lab showed that better ranking can improve precision, but source quality and corpus coverage still matter most for legal retrieval tasks.
